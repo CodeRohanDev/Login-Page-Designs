@@ -143,6 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             "Login Now",
                             style: TextStyle(
+                              fontFamily: "KdamThmorPro",
                               fontSize: 18, // Adjust the font size
                               fontWeight:
                                   FontWeight.bold, // Adjust the font weight
