@@ -115,6 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                           Text(
                             "Forgot Password",
                             style: TextStyle(
+                              fontFamily: "KdamThmorPro",
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
                             ),
