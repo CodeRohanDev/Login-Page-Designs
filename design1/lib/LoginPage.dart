@@ -64,6 +64,9 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
+                          labelStyle: TextStyle(
+                            fontFamily: "KdamThmorPro",
+                          ),
                           labelText: "Phone Number",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
