@@ -85,6 +85,9 @@ class _LoginPageState extends State<LoginPage> {
                         obscureText:
                             _isObscure, // Set this to true for password fields
                         decoration: InputDecoration(
+                          labelStyle: TextStyle(
+                            fontFamily: "KdamThmorPro",
+                          ),
                           labelText: "Password",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
