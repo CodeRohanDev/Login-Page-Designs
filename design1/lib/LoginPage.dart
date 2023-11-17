@@ -160,6 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                           Text(
                             "Don't have an account? ",
                             style: TextStyle(
+                              fontFamily: "KdamThmorPro",
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
@@ -167,6 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                           Text(
                             "Signup Now",
                             style: TextStyle(
+                                fontFamily: "KdamThmorPro",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
                                 color: Colors.blue),
