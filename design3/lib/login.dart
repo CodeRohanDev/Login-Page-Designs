@@ -3,13 +3,16 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _isObscure = true;
+  final TextEditingController _emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               TextFormField(
+                controller: _emailController,
                 decoration: InputDecoration(
                   hintText: "Enter Email",
                   hintStyle: TextStyle(
@@ -67,6 +71,16 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
+                validator: (value) {
+                  // Email validation regex
+                  String pattern =
+                      r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9]+\.)+[a-zA-Z]{2,}$';
+                  RegExp regex = RegExp(pattern);
+                  if (!regex.hasMatch(value!)) {
+                    return 'Enter a valid email address';
+                  }
+                  return null;
+                },
               ),
               SizedBox(
                 height: 20,
@@ -84,12 +98,24 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               TextFormField(
+                obscureText: _isObscure,
                 decoration: InputDecoration(
                   hintText: "Enter Password",
                   hintStyle:
                       TextStyle(fontFamily: "KdamThmorPro", letterSpacing: 1),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
+                  ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _isObscure ? Icons.visibility : Icons.visibility_off,
+                      color: Colors.grey,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _isObscure = !_isObscure;
+                      });
+                    },
                   ),
                 ),
               ),
