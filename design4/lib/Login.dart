@@ -14,189 +14,192 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.only(top: 50, left: 30, right: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Let's Login to your",
-                style: TextStyle(
-                  letterSpacing: 1,
-                  fontFamily: "KdamThmorPro",
-                  fontSize: 25,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50, left: 30, right: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Let's Login to your",
+                  style: TextStyle(
+                    letterSpacing: 1,
+                    fontFamily: "KdamThmorPro",
+                    fontSize: 25,
+                  ),
                 ),
-              ),
-              Text(
-                "account!",
-                style: TextStyle(
-                  fontFamily: "KdamThmorPro",
-                  color: Colors.green,
-                  letterSpacing: 1,
-                  fontSize: 25,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, bottom: 5),
-                child: Text(
-                  "Email ID",
+                Text(
+                  "account!",
                   style: TextStyle(
                     fontFamily: "KdamThmorPro",
+                    color: Colors.green,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1,
+                    fontSize: 25,
                   ),
                 ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: "Enter Email",
-                  hintStyle: TextStyle(
-                    fontFamily: "KdamThmorPro",
-                  ),
-                  prefixIcon: Icon(
-                    Icons.email,
-                    color: Colors.green,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, bottom: 5),
-                child: Text(
-                  "Password",
-                  style: TextStyle(
-                    fontFamily: "KdamThmorPro",
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
-                  ),
-                ),
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: "Enter Password",
-                  hintStyle: TextStyle(
-                    fontFamily: "KdamThmorPro",
-                  ),
-                  prefixIcon: Icon(
-                    Icons.email,
-                    color: Colors.green,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              SizedBox(
-                height: 55,
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, bottom: 5),
                   child: Text(
-                    "Login Now",
+                    "Email ID",
                     style: TextStyle(
                       fontFamily: "KdamThmorPro",
-                      color: Colors.white,
-                      fontSize: 18,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                      letterSpacing: 1,
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Row(
-                  children: [
-                    Text(
-                      "Don't Have an account?",
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Enter Email",
+                    hintStyle: TextStyle(
+                      fontFamily: "KdamThmorPro",
+                    ),
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Colors.green,
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, bottom: 5),
+                  child: Text(
+                    "Password",
+                    style: TextStyle(
+                      fontFamily: "KdamThmorPro",
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Enter Password",
+                    hintStyle: TextStyle(
+                      fontFamily: "KdamThmorPro",
+                    ),
+                    prefixIcon: Icon(
+                      Icons.email,
+                      color: Colors.green,
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                SizedBox(
+                  height: 55,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Login Now",
                       style: TextStyle(
                         fontFamily: "KdamThmorPro",
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Sign up",
-                        style: TextStyle(
-                            fontFamily: "KdamThmorPro", color: Colors.green),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Don't Have an account?",
+                        style: TextStyle(
+                          fontFamily: "KdamThmorPro",
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Sign up",
+                          style: TextStyle(
+                              fontFamily: "KdamThmorPro", color: Colors.green),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Divider(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text("Or"),
+                    ),
+                    Expanded(
+                      child: Divider(),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Divider(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text("Or"),
-                  ),
-                  Expanded(
-                    child: Divider(),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              SizedBox(
-                height: 55,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "Images/google.png",
-                        height: 20,
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        "Sign Up using Google",
-                        style: TextStyle(
-                          fontFamily: "KdamThmorPro",
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1,
+                SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                  height: 55,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "Images/google.png",
+                          height: 20,
                         ),
-                      )
-                    ],
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.green),
-                      borderRadius: BorderRadius.circular(10.0),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Text(
+                          "Sign Up using Google",
+                          style: TextStyle(
+                            fontFamily: "KdamThmorPro",
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1,
+                          ),
+                        )
+                      ],
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.green),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
