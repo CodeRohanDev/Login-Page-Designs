@@ -66,6 +66,19 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
+                  validator: (value) {
+                    String emailRegex =
+                        r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$';
+                    RegExp regExp = RegExp(emailRegex);
+
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email address.';
+                    } else if (!regExp.hasMatch(value)) {
+                      return 'Please enter a valid email address.';
+                    }
+
+                    return null; // Return null if the input is valid
+                  },
                 ),
                 SizedBox(
                   height: 20,
