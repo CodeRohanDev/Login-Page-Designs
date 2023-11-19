@@ -10,6 +10,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _isPasswordVisible = false;
+  TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -95,14 +97,38 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 TextFormField(
+                  obscureText: !_isPasswordVisible,
+                  controller: _passwordController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password.';
+                    } else if (value.length < 8) {
+                      return 'Password must be at least 8 characters long.';
+                    }
+
+                    return null; // Return null if the input is valid
+                  },
                   decoration: InputDecoration(
                     hintText: "Enter Password",
                     hintStyle: TextStyle(
                       fontFamily: "KdamThmorPro",
                     ),
                     prefixIcon: Icon(
-                      Icons.email,
+                      Icons.lock,
                       color: Colors.green,
+                    ),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _isPasswordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        color: Colors.green,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _isPasswordVisible = !_isPasswordVisible;
+                        });
+                      },
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
