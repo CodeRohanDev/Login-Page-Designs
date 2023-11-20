@@ -11,6 +11,18 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _obscureText = true;
+  final _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
+  String? _validatePassword(String value) {
+    if (value.isEmpty) {
+      return 'Password is required';
+    }
+    if (value.length < 6) {
+      return 'Password must be at least 6 characters';
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +120,13 @@ class _LoginPageState extends State<LoginPage> {
                   height: 60,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Check if currentState is not null before calling validate
+                      if (_formKey.currentState != null &&
+                          _formKey.currentState!.validate()) {
+                        // Your login logic goes here
+                      }
+                    },
                     child: Text(
                       "Login",
                       style: TextStyle(
@@ -118,9 +136,11 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8))),
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
