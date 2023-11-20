@@ -10,6 +10,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -60,6 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 60,
                   child: TextFormField(
+                    obscureText: _obscureText,
                     decoration: InputDecoration(
                       hintText: "Password",
                       hintStyle: TextStyle(
@@ -67,6 +70,18 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
+                      ),
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _obscureText = !_obscureText;
+                          });
+                        },
+                        child: Icon(
+                          _obscureText
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                        ),
                       ),
                     ),
                   ),
